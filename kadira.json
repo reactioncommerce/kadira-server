@@ -1,0 +1,34 @@
+{
+    "apps" : [
+      {
+        "name"        : "kadira-engine",
+        "cwd"         : "kadira-server/kadira-engine",
+        "script"      : "run.sh",
+        "interpreter" : "bash",
+        "watch"       : false,
+        "instances"   : 1,
+        "exec_mode"   : "fork",
+        "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS Z"
+      },
+      {
+        "name"        : "kadira-rma",
+        "cwd"         : "kadira-server/kadira-rma",
+        "script"      : "run.sh",
+        "interpreter" : "bash",
+        "watch"       : false,
+        "instances"   : 1,
+        "exec_mode"   : "fork",
+        "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS Z"
+      },
+      {
+        "name"        : "kadira-ui",
+        "cwd"         : "kadira-server/kadira-ui",
+        "script"      : "run.sh",
+        "interpreter" : "bash",
+        "watch"       : false,
+        "instances"   : 1,
+        "exec_mode"   : "fork",
+        "log_date_format": "YYYY-MM-DD HH:mm:ss.SSS Z"
+      }
+    ]
+  }
