@@ -5,6 +5,18 @@ Stripe = StripeHelper.getStripe();
 
 var usageCache = new LRU({max: 1000, maxAge: 1000 * 60 * 15});
 
+Meteor.startup(() =>{
+  try {
+    Accounts.createUser({
+      username: 'someusername',
+      email: 'test@email.com',
+      password: "somepassword"
+    })
+  } catch (err) {
+    console.log("User already exist");
+  }
+});
+
 KadiraAccounts.updateAppPlan = function(userId, newPlan, oldPlan) {
   var query = {owner: userId};
   var fields = {"plan": newPlan};

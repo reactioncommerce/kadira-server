@@ -1,8 +1,8 @@
 module.exports = function(config) {
   config = config || {};
-  config.limit = config.limit || 10;
-  config.resetTimeout = config.resetTimeout || 1000;
-  config.limitTotalTraces = config.limitTotalTraces || 100;
+  config.limit = config.limit || 100000;
+  config.resetTimeout = config.resetTimeout || 10;
+  config.limitTotalTraces = config.limitTotalTraces || 100000;
 
   var ratesPerApp = {};
 
