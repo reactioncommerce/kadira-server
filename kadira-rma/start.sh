@@ -50,9 +50,9 @@ while [[ true ]]; do
   dumpEnvVarsTo $ENV_FILE_NAME
   set -x;
   if [ -z ${START_TIME+x} ] || [ -z ${END_TIME+x} ]; then
-      mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js incremental-aggregation.js;
+      mongo $(pick-mongo-primary $MONGO_METRICS_URL) --authenticationDatabase admin --ssl profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js incremental-aggregation.js;
   else
-      mongo $(pick-mongo-primary $MONGO_METRICS_URL) profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js batch-aggregation.js;
+      mongo $(pick-mongo-primary $MONGO_METRICS_URL) --authenticationDatabase admin --ssl profiles/$PROFILE.js providers/$PROVIDER.js $ENV_FILE_NAME lib.js mapreduce.js batch-aggregation.js;
   fi
   set +x;
   completedAt=$(date +%s)

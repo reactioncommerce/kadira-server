@@ -44,21 +44,22 @@ function timeRound(time, PROFILE) {
 }
 
 function connectAppDb() {
-  var appUrl = ENV.MONGO_APP_CONN.split('~~~')[0];
-  var appDb = connect(appUrl);
+  return db.kadiraData;
+  // var appUrl = ENV.MONGO_APP_CONN.split('~~~')[0];
+  // var appDb = connect(appUrl);
 
-  var authString = ENV.MONGO_APP_CONN.substr(appUrl.length).trim();
-  if(authString != "") {
-    print('authenticating appDb: ', appUrl)
-      // process to auth
-      //  using this ugly ~~~ to replace spaces which cause some
-      //  issues with our env vars exposing script
-      var authInfo = authString.match(/~~~-u~~~(.*)~~~-p~~~(.*)/);
-    var connected = appDb.auth(authInfo[1], authInfo[2]);
-    if(connected === 0) {
-      throw new Error('authentication to appDB failed!');
-    }
-  }
+  // var authString = ENV.MONGO_APP_CONN.substr(appUrl.length).trim();
+  // if(authString != "") {
+  //   print('authenticating appDb: ', appUrl)
+  //     // process to auth
+  //     //  using this ugly ~~~ to replace spaces which cause some
+  //     //  issues with our env vars exposing script
+  //     var authInfo = authString.match(/~~~-u~~~(.*)~~~-p~~~(.*)/);
+  //   var connected = appDb.auth(authInfo[1], authInfo[2]);
+  //   if(connected === 0) {
+  //     throw new Error('authentication to appDB failed!');
+  //   }
+  // }
 
-  return appDb;
+  // return appDb;
 }
