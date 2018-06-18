@@ -44,7 +44,7 @@ function timeRound(time, PROFILE) {
 }
 
 function connectAppDb() {
-  return db.kadiraData;
+  return db;
   // var appUrl = ENV.MONGO_APP_CONN.split('~~~')[0];
   // var appDb = connect(appUrl);
 
