@@ -18,10 +18,10 @@ Meteor.methods({
       created: new Date(),
       owner: this.userId,
       secret: Meteor.uuid(),
-      plan: plan,
+      plan: "business",
       shard: shard,
       subShard: subShard,
-      pricingType: pricingType
+      pricingType: "paid"
     };
 
     return Apps.insert(app);
