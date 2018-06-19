@@ -10,14 +10,6 @@ RUN apt-get install -y --no-install-recommends build-essential curl sudo mongodb
 USER node
 WORKDIR /home/node
 
-ENV APP_MONGO_URL "mongodb://admin:jSDyQTUnhPum1MPI@kadira-shard-00-00-5l9ny.mongodb.net:27017,kadira-shard-00-01-5l9ny.mongodb.net:27017,kadira-shard-00-02-5l9ny.mongodb.net:27017/kadiraApps?ssl=true&replicaSet=kadira-shard-0&authSource=admin"
-ENV APP_MONGO_OPLOG_URL "mongodb://oplogger:oplogger@kadira-shard-00-00-5l9ny.mongodb.net:27017,kadira-shard-00-01-5l9ny.mongodb.net:27017,kadira-shard-00-02-5l9ny.mongodb.net:27017/local?ssl=true&replicaSet=kadira-shard-0&authSource=admin"
-ENV DATA_MONGO_URL "mongodb://admin:jSDyQTUnhPum1MPI@kadira-shard-00-00-5l9ny.mongodb.net:27017,kadira-shard-00-01-5l9ny.mongodb.net:27017,kadira-shard-00-02-5l9ny.mongodb.net:27017/kadiraData?ssl=true&replicaSet=kadira-shard-0&authSource=admin"
-ENV AWS_ACCESS_KEY_ID AKIAJM74Q4CYOZNRGGQA
-ENV AWS_SECRET_ACCESS_KEY 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
-ENV AWS_BUCKET reaction-kadira
-ENV AWS_DEFAULT_REGION us-east-2
-
 ENV ENGINE_PORT 11011
 ENV UI_PORT 8000
 ENV UI_URL http://localhost:$UI_PORT
