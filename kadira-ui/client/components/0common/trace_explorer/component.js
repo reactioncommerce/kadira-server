@@ -34,7 +34,7 @@ component.state.shareLink = function() {
       traceId: trace._id,
       appId: FlowRouter.getParam("appId")
     });
-    var url = Meteor.absoluteUrl(path, {secure: true, rootUrl: process.env.ROOT_URL});
+    var url = Meteor.absoluteUrl(path, {secure: true});
     return url;
   }
 };
