@@ -1,7 +1,7 @@
-version: '1'
+version: '3'
 services:
   kadira:
-    build: ./kadira-engine
+    build: ./
     ports:
       - "11011:11011"
       - "8000:8000"
