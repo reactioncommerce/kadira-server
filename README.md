@@ -22,11 +22,11 @@ db.mapReduceProfileConfig.insert({lastTime: new Date(), _id:{profile:'30min',pro
 
 ## Indexes to be created for kadiraData:
 1. `db.pubMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
-1. `db.pubMetrics.createIndex({"value.appId: 1", "value.res": 1, value.startTime: 1})`
+1. `db.pubMetrics.createIndex({"value.appId: 1", "value.res": 1, "value.startTime": 1})`
 1. `db.rawPubMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
 1. `db.methodsMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
-1. `db.methodsMetrics.createIndex({"value.appId: 1", "value.res": 1, value.startTime: 1})`
-1. `db.systemMetrics.createIndex({"value.appId: 1", "value.res": 1, value.startTime: 1})`
+1. `db.methodsMetrics.createIndex({"value.appId: 1", "value.res": 1, "value.startTime": 1})`
+1. `db.systemMetrics.createIndex({"value.appId: 1", "value.res": 1, "value.startTime": 1})`
 1. `db.rawMethodsMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
 1. `db.rawErrorMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
 1. `db.rawSystemMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
