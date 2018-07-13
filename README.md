@@ -20,29 +20,13 @@ db.mapReduceProfileConfig.insert({lastTime: new Date(), _id:{profile:'30min',pro
 1. Run `docker-compose up`
 1. Go to the <IP>:8000 and login with email - admin@kadira.com, passwd - admin.
 
-# Kadira APM
-
-This is a set of components you need to run Kadira in your system.
-
-> The following instructions are not production deployment configurations. It's meant for running for testing.
-
-## Initial Setup
-
-Open `init-shell.sh` and update configurations.
-Make sure to set fresh DB configurations before getting started.
-
-Then run following three components by visiting their directories:
-
-* kadira-engine
-* kadira-rma
-* kadira-ui
-
-## Connecting with Kadira Agent
-
-You you are ready to connect your app into Kadira. Since we are running with a custom setup, you need to export following environment variable before using Kadira in your app:
-
-```
-export KADIRA_OPTIONS_ENDPOINT=http://localhost:11011
-```
-
-> Here's we've assumed http://localhost:11011 as the kadira-engine URL.
+## Indexes to be created for kadiraData:
+1. `db.pubMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
+1. `db.pubMetrics.createIndex({"value.appId: 1", "value.res": 1, value.startTime: 1})`
+1. `db.rawPubMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
+1. `db.methodsMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
+1. `db.methodsMetrics.createIndex({"value.appId: 1", "value.res": 1, value.startTime: 1})`
+1. `db.systemMetrics.createIndex({"value.appId: 1", "value.res": 1, value.startTime: 1})`
+1. `db.rawMethodsMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
+1. `db.rawErrorMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
+1. `db.rawSystemMetrics.createIndex({"value.res": 1, "value.startTime": 1})`
